@@ -8,6 +8,8 @@ const PORT = 3000;
 
 const students = require("./data/students");
 
+const studentRoutes = require("./routes/studentRoutes");
+
 app.get("/", (req, res) => {
     res.send("<h1>🚀 Welcome to Student Management API</h1>");
 });
@@ -100,6 +102,9 @@ app.delete("/students/:id", (req, res) => {
     });
 
 });
+
+
+app.use("/students", studentRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
