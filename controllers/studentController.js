@@ -23,3 +23,16 @@ module.exports = {
     getAllStudents,
     getStudentById
 };
+
+const createStudent = (req, res) => {
+
+    const newStudent = req.body;
+
+    students.push(newStudent);
+
+    res.status(201).json({
+        message: "Student added successfully",
+        student: newStudent
+    });
+
+};
