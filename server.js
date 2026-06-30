@@ -26,9 +26,6 @@ app.get("/health", (req, res) => {
     res.send("API is running successfully ✅");
 });
 
-app.get("/students", (req, res) => {
-    res.json(students);
-});
 
 app.get("/students/:id", (req, res) => {
 
