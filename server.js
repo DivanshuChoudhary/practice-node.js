@@ -99,6 +99,27 @@ app.put("/students/:id", (req, res) => {
 
 });
 
+app.delete("/students/:id", (req, res) => {
+
+    const studentId = Number(req.params.id);
+
+    const studentIndex = students.findIndex((item) => item.id === studentId);
+
+    if (studentIndex === -1) {
+        return res.status(404).json({
+            message: "Student not found"
+        });
+    }
+
+    const deletedStudent = students.splice(studentIndex, 1);
+
+    res.json({
+        message: "Student deleted successfully",
+        student: deletedStudent[0]
+    });
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
