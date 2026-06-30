@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const students = require("../data/students");
+
+const {
+    getAllStudents,
+    getStudentById
+} = require("../controllers/studentController");
 
 // GET All Students
 router.get("/", (req, res) => {
