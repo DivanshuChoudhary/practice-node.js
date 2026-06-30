@@ -4,6 +4,27 @@ const app = express();
 
 const PORT = 3000;
 
+const students = [
+    {
+        id: 1,
+        name: "Divanshu",
+        course: "B.Tech CSE",
+        age: 18
+    },
+    {
+        id: 2,
+        name: "Rahul",
+        course: "B.Tech IT",
+        age: 19
+    },
+    {
+        id: 3,
+        name: "Aman",
+        course: "BCA",
+        age: 20
+    }
+];
+
 app.get("/", (req, res) => {
     res.send("<h1>🚀 Welcome to Student Management API</h1>");
 });
@@ -18,6 +39,10 @@ app.get("/contact", (req, res) => {
 
 app.get("/health", (req, res) => {
     res.send("API is running successfully ✅");
+});
+
+app.get("/students", (req, res) => {
+    res.json(students);
 });
 
 app.listen(PORT, () => {
