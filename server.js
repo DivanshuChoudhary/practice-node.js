@@ -1,5 +1,7 @@
 const express = require("express");
 
+app.use(express.json());
+
 const app = express();
 
 const PORT = 3000;
@@ -58,6 +60,19 @@ app.get("/students/:id", (req, res) => {
     }
 
     res.json(student);
+
+});
+
+app.post("/students", (req, res) => {
+
+    const newStudent = req.body;
+
+    students.push(newStudent);
+
+    res.status(201).json({
+        message: "Student added successfully",
+        student: newStudent
+    });
 
 });
 
