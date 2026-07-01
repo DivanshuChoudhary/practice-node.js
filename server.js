@@ -27,8 +27,6 @@ app.get("/health", (req, res) => {
 });
 
 
-
-
 app.post("/students", (req, res) => {
 
     const newStudent = req.body;
